@@ -20,6 +20,7 @@ class Solution:
 
         # Soln 2
         # @time = 84 ms
+        # @complexity O(n) - fastest
         prev_nums = {}
         for i in range(len(nums)):
             cur = nums[i]

@@ -42,6 +42,7 @@ class Solution:
 
         # Soln 2 - Directly add nums in l1 into l2 (Destructive for saving space)
         # @time = 156 ms
+        # @complexity O(?)
         total = l2
         carry = 0
         
