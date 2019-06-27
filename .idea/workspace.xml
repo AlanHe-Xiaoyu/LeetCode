@@ -15,11 +15,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2019/06 - June/5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="1005">
+              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+              <folding>
+                <element signature="method#longestPalindrome#0;class#q5#0" />
+                <element signature="method#expand_center#0;class#q5#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/2019/06 - June/530.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="class#TreeNode#0;class#q530#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/Google_Interview/2019_Fall/q1_test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -65,9 +81,9 @@
         <option value="$PROJECT_DIR$/Google_Interview/2019_Fall/q2_test.java" />
         <option value="$PROJECT_DIR$/Google_Interview/2019_Fall/q1.java" />
         <option value="$PROJECT_DIR$/Google_Interview/2019_Fall/q2.java" />
-        <option value="$PROJECT_DIR$/2019/06 - June/530.java" />
         <option value="$PROJECT_DIR$/Google_Interview/2019_Fall/q1_test.java" />
         <option value="$PROJECT_DIR$/2019/06 - June/5.java" />
+        <option value="$PROJECT_DIR$/2019/06 - June/530.java" />
       </list>
     </option>
   </component>
@@ -118,7 +134,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561675444470" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561675746905" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -132,7 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.q1_test.naiveTest">
+  <component name="RunManager" selected="Application.q5">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -148,6 +164,14 @@
     <configuration name="q1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="q1" />
       <module name="Google_Interview" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="q5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="q5" />
+      <module name="2019" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,6 +231,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.q5" />
         <item itemvalue="JUnit.q1_test.naiveTest" />
         <item itemvalue="JUnit.q2_test" />
         <item itemvalue="JUnit.q1_test" />
@@ -263,7 +288,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32970297" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32970297" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -272,7 +297,7 @@
       <window_info anchor="bottom" id="Style Checker" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32970297" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32970297" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -298,20 +323,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2019/06 - June/530.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/2019/03 - Mar/04.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Google_Interview/2019_Fall/q1_test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -324,8 +342,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2019/06 - June/5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="1005">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="method#longestPalindrome#0;class#q5#0" />
+            <element signature="method#expand_center#0;class#q5#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2019/06 - June/530.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="class#TreeNode#0;class#q530#0" />
+          </folding>
         </state>
       </provider>
     </entry>
