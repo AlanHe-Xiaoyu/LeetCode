@@ -7,7 +7,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-import java.util.LinkedList;
+import java.util.ArrayList;
 class Solution {
     public int getMinimumDifference(TreeNode root) {
         ArrayList<Integer> iot = new ArrayList<>();
