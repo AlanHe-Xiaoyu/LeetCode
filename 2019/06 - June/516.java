@@ -1,33 +1,22 @@
-class q5 {
+class q516 {
     public static void main(String[] args) {
-        String test = "abbbaaccaae"; // should be "aaccaa"
-        System.out.println(longestPalindrome(test));
+        String test = "abbbaaccaae"; // should be 6
+        System.out.println(longestPalindromeSubseq(test));
     }
 
-    public static String longestPalindrome(String s) {
-        if (s.length() < 1) { return ""; }
+    public static int longestPalindromeSubseq(String s) {
+        if (s.length() < 1) { return 0; }
 
         int max_len = -1;
-        int center = -1;
 
         for (int i = 0; i < s.length(); i++) {
             int cur_len = expand_center(s, i);
             if (cur_len > max_len) {
                 max_len = cur_len;
-                center = i;
             }
         }
 
-        int begin, end;
-        if (max_len % 2 == 0) {
-            begin = center - max_len / 2 + 1;
-            end = center + max_len / 2 + 1;
-        } else {
-            begin = center - (max_len - 1) / 2;
-            end = center + (max_len - 1) / 2 + 1;
-        }
-
-        return s.substring(begin, end);
+        return max_len;
     }
 
     public static int expand_center(String s, int idx) {
@@ -62,30 +51,19 @@ class q5 {
 // Below is the actual submission on LeetCode
 /**
 class Solution {
-    public String longestPalindrome(String s) {
-        if (s.length() < 1) { return ""; }
+    public int longestPalindromeSubseq(String s) {
+        if (s.length() < 1) { return 0; }
 
         int max_len = -1;
-        int center = -1;
 
         for (int i = 0; i < s.length(); i++) {
             int cur_len = expand_center(s, i);
             if (cur_len > max_len) {
                 max_len = cur_len;
-                center = i;
             }
         }
 
-        int begin, end;
-        if (max_len % 2 == 0) {
-            begin = center - max_len / 2 + 1;
-            end = center + max_len / 2 + 1;
-        } else {
-            begin = center - (max_len - 1) / 2;
-            end = center + (max_len - 1) / 2 + 1;
-        }
-
-        return s.substring(begin, end);
+        return max_len;
     }
 
     public int expand_center(String s, int idx) {
