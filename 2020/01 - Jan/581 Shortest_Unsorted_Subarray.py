@@ -3,7 +3,7 @@ class Solution:
     def findUnsortedSubarray(self, nums) -> int:
 
         """
-        Soln 1
+        Soln 1 - basic idea : sorting -> O(n log n) time
         Runtime: 224 ms, faster than 50.00% of Python3 online submissions for Shortest Unsorted Continuous Subarray.
         Memory Usage: 14 MB, less than 85.00% of Python3 online submissions for Shortest Unsorted Continuous Subarray.
         """
