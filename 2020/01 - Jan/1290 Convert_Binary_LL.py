@@ -5,7 +5,8 @@
 #         self.next = None
 
 class Solution:
-    def getDecimalValue(self, head: ListNode) -> int:
+    # head: ListNode
+    def getDecimalValue(self, head) -> int:
 
         """
         Runtime: 28 ms, faster than 66.59% of Python3 online submissions for Convert Binary Number in a Linked List to Integer.
