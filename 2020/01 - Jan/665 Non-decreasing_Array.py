@@ -21,7 +21,7 @@ class Solution:
         if changedIdx == -1:
             return True
         
-        flag1, flag2 = True, True
+        flag1 = True
         for i in range(length - 1):
             before, after = nums1[i], nums1[i+1]
             if before > after:
