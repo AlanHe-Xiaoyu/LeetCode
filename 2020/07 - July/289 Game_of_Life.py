@@ -3,6 +3,11 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
+
+        """
+        Runtime: 32 ms, faster than 78.04% of Python3 online submissions for Game of Life.
+        Memory Usage: 14 MB, less than 17.17% of Python3 online submissions for Game of Life.
+        """
         def in_board(x, y, row, col):
             return x >= 0 and y >= 0 and x < row and y < col
         
