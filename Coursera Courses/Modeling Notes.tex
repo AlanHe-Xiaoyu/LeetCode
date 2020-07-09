@@ -1,0 +1,307 @@
+\documentclass{article}
+\usepackage[left=1cm, right=1cm, top=1cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mathrsfs}
+\begin{document}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+\noindent{\LARGE {\color{OrangeRed} Business and Financial Modeling Specialization }} \\
+
+
+% \newpage
+\noindent{\Large {\color{blue} 2. Introduction to Spreadsheets and Models }}
+\begin{itemize}
+\item 2. Data $\rightarrow$ What-If Analysis $\rightarrow$ Scenario Manager
+
+Sensitivity analysis : compare impact on an outcome variable based on 10\% changes on individual input vars
+
+Limits to simple, deterministic models : doesn't incorporate the uncertainty of market, i.e. inaccurate representations of variance in real world.
+
+\item 3. Modeling Risk and Making Predictions
+
+=RandBetween(low, high)
+
+Forcast : for Linear : =FORECAST(predict\_x, known\_y's, known\_x's)
+
+for Exponential : =GROWTH(known\_y's, known\_x's, predict\_x) and =LOGEST(Known Y’s, Known X’s, Const, Stats)
+
+Regression Analysis : =CORREL(array1, array2)
+
+or Data $\rightarrow$ Data Analysis $\rightarrow$ Regression (R = correlation; R Square = covariance; adjusted R$^2$ to account for size)
+
+\item 4. Monte Carlo Simulations
+
+Worth when manual What-If analysis is impossible, model is complex, stakes is high or a bit more precision is important
+
+- Linear Programming (LP) Solver
+\end{itemize}
+
+
+
+
+\newpage
+\noindent{\Large {\color{blue} 3. Modeling Risk and Realities }}
+\begin{itemize}
+	\item 1. Models with Little to No Risk
+
+	Decision, objective, constraint(s) $\rightarrow$ spreadsheet to optimize
+
+	Deterministic settings $\iff$ no risk
+
+	Run ``Excel Solver'' several times w/ different starting values to ensure global min/max.
+
+
+	\item 2. Models with High Risk
+
+	{\color{red} Scenario Approach} : basically, estimate the future based on the past
+
+	(e.g. expect equal probability of return as one of the past 20 trading days of a stock)
+
+	Should vary \# of used scenarios (past events) to test robustness (and prevent overfitting)
+
+	Risk := likelihood and/or magnitude of \textbf{undesirable} outcome(s)
+
+	- Negative correlation $\rightarrow$ reduced variance/risk/volatility
+
+
+	\item 3. Data Visualization \& Choose the Right Distribution
+
+	Goodness of fit tests : Chi-Square ($\chi^2$) test \& Kolmogorov-Smirnov test.
+
+	- Chi-Square test is one-sided, i.e. can disprove but not prove
+
+	Null hypothesis : the studied comes from a RV following a specified distribution.
+
+	Ideally, $\geq 50$ data points; divide into $n$ buckets with $\geq 5$ in each.
+
+	Every $\chi^2$ test has ``degree of freedom'' = \# of buckets $-$ \# parameters of specified distribution $-\, 1$
+
+	Then, look up a confidence table.
+
+	Excel formula : =chisq.test(actual range, expected range)
+
+	- Kolmogorov-Smirnov (K-S) test
+
+	Arrange data values in ascending order; arrange theoretical values similarly; find maximal diff b/w them.
+
+	Typically, a value 0.03-0.04 or lower is considered good.
+
+
+	\item 4. Comparing Alternatives using Simulations
+
+	Careful when calculating expected values that involve non-linear terms $\rightarrow$ need simulation
+
+	Data Analysis $\rightarrow$ Random Number Generation
+
+	Can compare the 95\% CI of expected return and risk
+\end{itemize}
+
+
+
+
+
+\newpage
+\noindent{\Large {\color{blue} 4. Decision-Making and Scenarios }}
+\begin{itemize}
+\item 1. Compare with NPV (net present values)
+
+$F_n = \text{PV} \cdot (1+r)^{n}$
+
+Excel =NPV($\cdot$) function assumes that $1^{st}$ payment starts at $t=1$, i.e. discounted by $r$
+
+- Cost of Capital (CoC) : reflects riskless return, compensation for expected inflation + risk premium
+
+Usually considers the nominal CoC, i.e. includes compensation for expected inflation
+
+Hard to estimate
+
+- Internal rate of return (IRR) : Excel =IRR(values)
+
+Project gains (positive NPV) iff IRR $>$ CoC
+
+May not always give the idea of worth or not $\rightarrow$ NPV is always good
+
+- Other criteria (not too good) : payback time, ROI (avg/expected)
+
+
+\item 2. Initial investment, Operating phase, Terminal phase
+
+- Initial investment : capitalized costs (asset, no immediate tax benefit), non-capitalized costs (R\&D + training), working capital (inventory, no tax benefit)
+
+Working capital expansion consumes cash.
+
+- Operating : $\Delta$Cash Flow = $\Delta$CR - $\Delta$CE - $\Delta$T
+
+Taxable income = Revenue - COGS - DTS (depreciation tax savings) $\rightarrow$ doesn't depend on account receivable etc.
+
+Annual depreciation : (cost - estimated salvage) / life
+
+- Terminal : include tax on gain/loss on (final sale $-$ estimated salvage value)
+
+- Key considerations
+	\begin{itemize}
+	\item If company profitable, then losses can be used for tax deduction; else, losses are just losses.
+	\item Financing is included only in estimation of CoC, but not cash flow.
+	\item Include all incidental effects (on other products/services).
+	\item Working capital is usually released at the end.
+	\item Sunk cost never relevant; additional investment is.
+	\item Don't forget opportunity costs (:= value of the resource in its next most highly valued use)
+	\item Perform sensitivity analysis
+	\end{itemize}
+
+
+\item 3. Financial Statements (Balance Sheet, Income Statement, Cash Flow Statement) and Forecasting
+
+- Balance Sheet (Snapshot of a timepoint)
+\begin{itemize}
+	\item Financial position (listing of resources and obligations) on a specific date
+	\item Assets = Liabilities + Owners' Equity
+	\item Common assets on it : cash (link to CFS), accounts receivable, inventory, property plant and equipment (PPE), intangible assets, investments in financial assets, etc.
+	\item Liabilities on it : accounts payable, other payables (wages, interest, income taxes), receipt of payment in advance of providing service, short-term debt, long-term debt, product warranties, employee pensions
+	\item Owners' Equity : contributed capital, retained earnings (link to IS)
+	\begin{figure}[h!]
+	  \includegraphics[width=0.5\linewidth]{/Users/ahecomputer/Desktop/All_Pics_LaTeX/coursera_income_statement}
+	  % \caption{caption}
+	  % \label{label}
+	\end{figure}
+\end{itemize}
+
+* Income vs Cash Flow (difference is TIMING)
+
+income : measures the increase in economic value from a xact or even
+
+cash flow : measures the receipt of that value in the form of cash
+
+- IS
+\begin{itemize}
+	\item Profitability of operations over a period of time
+	\item Net income = Revenues $-$ Expenses
+	\item Expenses are grouped into categories : revenue (or sales), \textul{COGS}; gross profit, \textul{operating (SG\&A) expense}; operating income, \textul{interest, other gains and losses}; pre-tax income, \textul{income tax expense}; net income
+\end{itemize}
+
+- CFS
+\begin{itemize}
+	\item Sources and uses of cash during a period of time
+	\item Operating, investing, and financing activities
+	\begin{itemize}
+		\item Operating : xacts related to providing goods and services to customers and to pay expenses related to the revenue generating activities
+		\item Investing : xacts related to acquisition or disposal of long-term assets (e.g. PPE)
+		\item Financing : xacts related to owners or creditors (e.g. cash from issuing shares $-$ cash paid for dividends)
+	\end{itemize}
+	\item Operations and Investing : to evaluate a project
+	\item Cash from Operations = net income + depreciation $-$ $\Delta$working capital
+	\item Cash from Investing = $-$ investment in long-term assets + disposal of LT assets
+	\item Cash from Financing = changes in LT liabilities + changes in contributing capital $-$ dividends
+\end{itemize}
+	\begin{figure}[h!]
+		  \includegraphics[width=0.5\linewidth]{/Users/ahecomputer/Desktop/All_Pics_LaTeX/coursera_cfo_vs_ni}
+		  % \caption{caption}
+		  % \label{label}
+	\end{figure}
+
+	\item 4. New Product Venture
+
+	Forecast often starts with Sales
+
+	Calculate NPV \& IRR $\rightarrow$ What can go wrong? How wrong can it go?
+
+	- Formulation and Evaluation of Alternative Scenarios
+
+	To find breakeven point : Data $\rightarrow$ What-If Analysis $\rightarrow$ Goal Seek
+
+	Consider changes in credit policy, etc.
+
+	- Expanding Beyond the Time Horizon
+
+	Usually individual forecast for a finite horizon (3-7 years) +  ad hoc (simplified) assumption for later (Terminal Value)
+
+	For the steady state, use constant CF (perpetuity) or constant growing rate (constant growth perpetuity)
+
+	N.B. Remember the one-time ``other disposable costs''
+
+	N.B. A lot of value comes from the steady state terminal value.
+\end{itemize}
+
+
+
+
+
+
+\newpage
+\noindent{\Large {\color{blue} 5. Wharton Business and Financial Modeling Capstone }}
+\begin{itemize}
+\item 1. Modern portfolio theory
+
+	Investing in various assets, e.g. equity, fixed income, currency, real estates to achieve a high return with controlled risk.
+
+	{\color{red} Efficient frontier} : the set of portfolios which satisfy the condition that no other portfolio exists with a higher expected return but with the same standard deviation of return (i.e. the risk).
+
+	Diversification : rebalancing is a key to maintaining risk levels over time.
+
+\item 2. Close price vs Adjusted Close price
+
+	{\color{red} Sharpe Ratio} : describes how much excess return you receive for the extra volatility you endure for holding a riskier asset
+
+	$$S(x) = \frac{r_x - R_f}{\text{StdDev}(r_x)}$$
+
+	$x$ investment; $r_x$ avg rate of return; $R_f$ best available rate of return of a risk-free securiy (i.e. T-bills)
+
+	A risk/return measure for capital asset pricing model (CAPM)
+
+	For some insight, a ratio of 1 or better is good, 2 or better is very good, and 3 or better is excellent.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

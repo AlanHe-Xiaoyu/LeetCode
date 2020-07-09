@@ -1,0 +1,17 @@
+hooks:
+    yml_validation:
+        paths:
+            - '*.yml'
+    json_validation:
+        paths:
+            - '*.json'
+    approval_count:
+        amount: 1
+    owners:
+        ownersets:
+            general:
+                paths:
+                    - '*'
+                owners:
+                    - "@int_admin"
+                    - alex-quach-ck

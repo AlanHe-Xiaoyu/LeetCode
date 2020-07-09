@@ -1,0 +1,204 @@
+\documentclass{article}
+\usepackage[left=1cm, right=1cm, top=1cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mathrsfs}
+\begin{document}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+% \noindent{\LARGE {\color{OrangeRed} Business and Financial Modeling Specialization }} \\
+
+
+% \newpage
+\noindent{\Large {\color{blue} FE RM }}
+\begin{itemize}
+\item Security pricing, Portfolio selection, Risk management
+
+\item \textul{Defn} No-Arbitrage
+
+For a contract : pay $p$ @ $t=0$, receive $c_k$ @ $t=k$, $k \in \mathbb{Z}^{+}$ ($c_k$ can be negative)
+
+* Weak No-Arbitrage : $c_k \geq 0$ $\forall k$ $\implies$ $p \geq 0$
+
+* Strong No-Arbitrage : $c_k \geq 0\ \forall k$ and $c_\ell > 0$ for some $\ell \implies p > 0$
+
+\item Simple vs Compound interest
+
+$A(1 + nr)$ vs $A(1+r)^{n}$
+
+Continuous compounding : $\lim\limits_{k\rightarrow\infty} A(1 + \frac{r}{k})^{kn} = A \cdot e^{rn}$
+
+Bond : for half-year bonds, yield to maturity $\lambda$ (= rate at which price $P$ = PV of coupon payments) follows
+$$P = \frac{F}{(1 + \lambda/2)^{2T}} + \sum\limits_{k=1}^{2T} \frac{c}{(1 + \lambda/2)^k}$$
+
+Lower quality $\rightarrow$ lower price $\rightarrow$ higher $\lambda$ (YTM) - crude measure however
+
+
+\item \textul{Thm} {\color{red} Linear Pricing} : if price of CF $c_a$ is $p_a$ and price of CF $c_b$ is $p_b$, then price of CF that pays $c = c_a + c_b$ must be $p_a + p_b$
+
+
+\item Floating interest rate : break down a floating $r$ bond into simpler CFs by constructing a deterministic CF
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{/Users/ahecomputer/Desktop/All_Pics_LaTeX/coursera_floating_to_deterministic}
+  % \caption{caption}
+  % \label{label}
+\end{figure}
+
+Thus, the price of the portfolio above is $= p_k -\alpha + \alpha = \frac{F\cdot r_0}{(1 + r_0)^{k}}$
+
+$$\implies P_f = \frac{F}{(1+r_0)^{n}} + \sum\limits_{k=1}^{n} p_k
+ = \cdots = F
+$$
+Price of floating rate bond is always the face value!
+
+\item Term structure of $r$, i.e. depends on duration
+
+Spot rates $s_t =$ interest rate for a loan maturing in $t$ years
+
+$A$ in year $t$ $\rightarrow \text{PV} = \frac{A}{(1+s_t)^{t}}$
+
+Discount rate $d(0,t) = \frac{1}{(1+s_t)^{t}}$
+
+Forward rate $f_{uv} =$ interest rate quoted today for lending from year $u$ to $v$ ($v \geq u$)
+
+$$(1+s_v)^{v} = (1+s_u)^{u} \cdot (1 + f_{uv})^{v-u}
+\implies
+f_{uv} = \Big( \frac{(1+s_v)^{v}}{(1+s_u)^{u}} \Big)^{\frac{1}{v-u}} - 1
+$$
+Relation b/w spot and forward rates
+$$(1+s_t)^{t} = \prod_{k=0}^{t-1} (1 + f_{k, k+1})
+$$
+
+\item \textul{Defn} Forward Contract : gives the buyer the right and obligation to purchase a specified amount of an asset, at a specified time $T$, at a specified price $F$ (called the forward price) set at time $t = 0$
+
+$f_t$ = value/price at time $t$ of a long position in the forward contract
+
+Value at time $T : f_T = S_T - F$ where $S_T$ is price of asset at $T$
+
+Forward price $F$ is set s.t. at $t=0$ value/price $f_0 = 0$
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{/Users/ahecomputer/Desktop/All_Pics_LaTeX/cousera_forward_price}
+  % \caption{caption}
+  % \label{label}
+\end{figure}
+
+$$0 = \Big(\frac{S_0}{d(0,T)} - F\Big) d(0,T) \implies F = \frac{S_0}{d(0,T)}$$
+
+$F > S_0$ due to cost of carry
+
+- $f_t = (F_t - F_0) \cdot d(t, T)$
+
+\item \textul{Defn} Swap : contracts that transform one kind of cash flow into another
+
+Leverage strength
+
+$\rightarrow$ Pricing interest rate swaps (fixed rate vs floating - based on LIBOR)
+
+CFs at $t = 1, ..., T$
+
+A (long) receives $N r_{t-1}$, pays $NX$; B (short) receives $NX$, pays $N r_{t-1}$ where $X$ is the fixed rate.
+
+Set value of swap $V_{A} = N(1 - d(0,T)) - NX \sum\limits_{t=1}^{T} d(0,t) = 0$ gives:
+
+$$X = \frac{1 - d(0,T)}{\sum_{t=1}^{T} d(0,t)}$$
+
+
+\item Futures
+
+Need Martingale pricing formalism
+
+Deterministic $r:$ forward price = futures price
+
+At maturity, futures price $F_T$ = price of underlying $S_T$
+
+\item \textul{Defn} European call/put option : gives the buyer the right but not the obligation to purchase/sell 1 unit of underlying at specified price $K$ (strike price) at a specified time $T$ (expiration).
+
+\textul{Defn} American call/put option : gives ... right but not obligation to purchase/sell 1 unit ... at {\color{red} any time until} a specified $T$ (expiration).
+
+- EU call option payoff = $\max\{S_T - K, 0\}$, i.e. nonlinear
+
+Intrinsic value of a EU call option at time $t \leq T = \max\{S_t - K, 0\}$
+
+$\rightarrow$ in the money if $S_t > K$; at the money if $S_t = K$; out of the money if $S_t < K$
+
+- Notation
+
+Price of EU call/put with strike $K$ and expiration $T$ : $c_E(t; K,T)$ and $p_E(t; K,T)$
+
+Price of American call/put with strike $K$ and expiration $T$ : $c_A(t; K,T)$ and $p_A(t; K,T)$
+
+{\color{red} European put-call parity} at time $t$ for non-dividend paying stock : $p_E(t;K,T) + S_t = c_E(t;K,T) + K \cdot d(t,T)$
+
+With dividend (PV of all dividend until maturity = $D$), $p_E(t; K,T) + S_t - D = c_E(t; K,T) + K \cdot d(t,T)$
+
+- Never optimal to exercise an American call on a non-dividend paying stock early!
+
+Since $c_A(t;K,T) \geq c_E(t;K,T) \geq \max\{S_t - Kd(t,T), 0\} > \max\{S_t - K, 0\}$
+
+Not always true for put options.
+
+\item Options Pricing
+
+Assume stock price dynamics in Binomial (each step Bernoulli($p$) goes up by $u$ portion or down by $d$ with $ud = 1$)
+
+Assume a risk-free asset (or cash account) is available, i.e. \$1 becomes $(1+r)^{t}$ after $t$ periods
+
+Utility function $u(\cdot)$ should be monotonic and concave, e.g. log
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

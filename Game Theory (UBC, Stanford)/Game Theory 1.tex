@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage[left=1cm, right=1cm, top=1cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mathrsfs}
+\begin{document}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+
+\noindent{\Large {\color{blue} Week 1 }}
+\begin{itemize}
+	\item Nash Equilibrium (NE)
+
+	Best response (BR) : best response of player $i$ given the action of everybody else ($a_{-i}$)
+
+	$a = \langle a_1, ..., a_n \rangle$ is a (``pure strategy'') NE iff $\forall i$, $a_i \in BR(a_{-1})$
+
+	\item Strictly dominant ($>$ for all)
+
+	Very weakly dominant ($\geq$ for all)
+
+	\item Pareto Optimality
+
+	When an outcome $o \geq o'$ for all agents, and an agent strictly prefers $o$ to $o'$, then $o$ Pareto-dominates $o'$.
+
+	Pareto Optimality : an outcome $o^*$ is Pareto-optimal is $\exists$ no outcome that Pareto-dominates it.
+
+	- The NE is the only non-Pareto-optimal outcome.
+
+
+	\item Mixed Strategies $\rightarrow$ expected utility
+
+	\item Thm: every finite game has a NE (mixed strat).
+
+	\item Iterated removal of strictly dominated strategies
+	\item Correlated Equilibrium : a randomized assignment of (potentiall correlated) action recommendations to agents s.t. nobody wants to deviate, e.g. traffic light.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
